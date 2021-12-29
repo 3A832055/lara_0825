@@ -36,10 +36,19 @@ Route::get('/', function () {
     //$posts = Post::where('id', '<', 10)->orderBy('id', 'DESC')->get();
     //dd($posts);
 
+    //$post = Post::find(1);
+    //$post->update([
+        //'title' => 'update title',
+        //'content' => 'update content',
+    //]);
+
+    //$post = Post::find(1);
+    //$post->title = 'save title';
+    //$post->content = 'save content';
+    //$post->save();
+
     $post = Post::find(1);
-    $post->title = 'save title';
-    $post->content = 'save content';
-    $post->save();
+    $post->delete();
 });
 
 Route::get('posts', [\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');

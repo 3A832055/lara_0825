@@ -54,8 +54,11 @@ Route::get('/', function () {
 
     //Post::destroy(3, 5, 7);
 
-    $allPosts = Post::all();
-    dd($allPosts);
+    //$allPosts = Post::all();
+    //dd($allPosts);
+
+    $featuredPosts = Post::where('is_feature', 0)->get();
+    dd($featuredPosts);
 });
 
 Route::get('posts', [\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');

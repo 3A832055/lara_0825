@@ -67,15 +67,15 @@ Route::get('/', function () {
     //$lastPost = Post::orderBy('id', 'DESC')->first();
     //dd($lastPost);
 
-    $post=Post::find(10);
-    echo $post->title.'<br>';
-    foreach ($post->comments as $comment){
-        echo $comment->content.'<br>';
-    }
+    //$post=Post::find(10);
+    //echo $post->title.'<br>';
+    //foreach ($post->comments as $comment){
+        //echo $comment->content.'<br>';
+    //}
 
-    $comment=Comment::find(5);
+    $comment=Comment::find(6);
     echo $comment->content.'<br>';
-    $post = $comment->post_id;
+    $post = $comment->post;
     echo $post->id.'<br>';
     echo $post-title.'<br>';
     echo $post->content.'<br>';

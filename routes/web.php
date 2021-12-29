@@ -37,10 +37,9 @@ Route::get('/', function () {
     //dd($posts);
 
     $post = Post::find(1);
-    $post->update([
-        'title' => 'update title',
-        'content' => 'update content',
-    ]);
+    $post->title = 'save title';
+    $post->content = 'save content';
+    $post->save();
 });
 
 Route::get('posts', [\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');
